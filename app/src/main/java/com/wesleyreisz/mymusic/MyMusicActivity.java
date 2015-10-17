@@ -1,17 +1,35 @@
 package com.wesleyreisz.mymusic;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import com.wesleyreisz.mymusic.model.Song;
+import com.wesleyreisz.mymusic.service.MockMusicService;
 
+import java.util.List;
 
-public class MyMusicActivity extends Activity {
+public class MyMusicActivity extends FragmentActivity {
+    private static final String TAG ="MusicList";
+    private static final String SONG_TITLE = "SongTitle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_music);
+
+        ListView listView = (ListView) findViewById(R.id.listViewSongs);
+        List<Song> songs = new MockMusicService().findAll();
+        final SongAdapter songAdapter = new SongAdapter(this, R.layout.activity_my_music, songs);
+        listView.setAdapter(songAdapter);
+
     }
 
 
