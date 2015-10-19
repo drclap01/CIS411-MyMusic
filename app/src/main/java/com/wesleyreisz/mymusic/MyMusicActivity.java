@@ -1,15 +1,9 @@
 package com.wesleyreisz.mymusic;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import com.wesleyreisz.mymusic.model.Song;
 import com.wesleyreisz.mymusic.service.MockMusicService;

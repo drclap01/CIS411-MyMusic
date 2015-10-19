@@ -1,7 +1,6 @@
 package com.wesleyreisz.mymusic;
 
 
-import android.content.ContentQueryMap;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
